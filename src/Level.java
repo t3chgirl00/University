@@ -1,2 +1,3 @@
-package PACKAGE_NAME;public enum Level {
+public enum Level {
+    FirstYear, SecondYear, ThirdYear, FourthYear
 }
