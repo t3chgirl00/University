@@ -1,4 +1,4 @@
-public class Lecturer  implements iNameable{
+public class Lecturer{
     private  String name;
     private Subject subject;
 
@@ -19,7 +19,6 @@ public class Lecturer  implements iNameable{
                 '}';
     }
 
-    @Override
     public String getName() {
         return this.name;
     }

@@ -1,40 +1,28 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
-import java.util.stream.Collectors;
 
 public class Main {
 
     public static void main(String[] args) {
-        String vowels = "aeiou";
         Lecturer lecturer = new Lecturer("Mrs. Ansah", Subject.INTROTOPROGRAMMING);
-        Lecturer lecturer2 = new Lecturer("Mrs. Mensah", Subject.ADVANCEDGARDENING);
-        Lecturer lecturer3 = new Lecturer("Mrs. Johnson", Subject.ADVANCEDPHYSICS);
 
-        ArrayList<Student> students = new ArrayList<>(
+
+
+        List<Student> studentAndNaughty = new ArrayList<>(
                 List.of(
-                new Student("Richard", 1, Year.THIRD),
-                new Student("Jerry", 2, Year.FIRST),
-                new Student("Ama", 3, Year.SECOND),
-                new Student("Selena", 5, Year.THIRD),
-                new Student("Abena", 6, Year.FIRST),
-                new Student("Kofi", 7, Year.SECOND),
-                new Student("Maureen", 8, Year.FOURTH),
-                new Student("Edem", 4, Year.FOURTH)
-
-                ));
+                        new NaughtyStudent("Mariam", 11, Year.THIRD, List.of(34.6, 78.9, 67.8, 65.7)),
+                        new Student("Lisa", 12, Year.THIRD, List.of(89.0, 90.0, 96.9, 99.5)),
+                        new NaughtyStudent("Alfred", 13, Year.THIRD, List.of(67.9, 34.9, 89.9, 56.2)),
+                        new Student("Nortey", 14, Year.THIRD, List.of(67.9, 34.9, 89.9, 56.2)),
+                        new NaughtyStudent("Kpakpo", 15, Year.THIRD, List.of(67.9, 34.9, 89.9, 56.2))
+                )
+        );
 
 
 
 
-
-        Course introToProgramming = new Course(lecturer, students.stream().filter(student -> student.getYear()==Year.FIRST).collect(Collectors.toList()),  Year.FIRST);
-        Course advancedGardening = new Course(lecturer2,  students.stream().filter(student -> student.getYear()==Year.THIRD || student.getYear()==Year.FOURTH).collect(Collectors.toList()), Year.FOURTH);
-        Course advancedPhysics = new Course(lecturer3, students.stream().filter(student -> student.getYear()==Year.FOURTH && vowels.contains(student.getName().toLowerCase().substring(0, 1))).collect(Collectors.toList()), Year.FOURTH);
-
-        System.out.println(introToProgramming);
-        System.out.println(advancedGardening);
-        System.out.println(advancedPhysics);
+        Course naughtyCourse = new Course(lecturer, studentAndNaughty, Year.THIRD);
+        System.out.println(naughtyCourse);
 
 
 
