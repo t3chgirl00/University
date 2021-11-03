@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.stream.DoubleStream;
 
 public class Student implements Nameable, HasYear {
     private String name;
@@ -40,6 +41,13 @@ public class Student implements Nameable, HasYear {
     public String getName() {
         return this.name;
     }
+
+    public DoubleStream gradesAsDoubleStream(){
+        DoubleStream grades = studentGrade.stream().mapToDouble(Double::doubleValue);
+        grades.forEach(System.out::println);
+        return grades;
+    }
+
 
     @Override
     public String toString() {

@@ -5,7 +5,7 @@ public class Main {
 
     public static void main(String[] args) {
         Lecturer lecturer = new Lecturer("Mrs. Ansah", Subject.INTROTOPROGRAMMING);
-
+        Student student = new Student("Mariam", 11, Year.THIRD, List.of(34.6, 78.9, 67.8, 65.7));
 
 
         List<Student> studentAndNaughty = new ArrayList<>(
@@ -17,12 +17,18 @@ public class Main {
                         new NaughtyStudent("Kpakpo", 15, Year.THIRD, List.of(67.9, 34.9, 89.9, 56.2))
                 )
         );
+        Register register = new Register( studentAndNaughty);
+
+
+        student.gradesAsDoubleStream();
+        register.getStudentByName("aama");
+
 
 
 
 
         Course naughtyCourse = new Course(lecturer, studentAndNaughty, Year.THIRD);
-        System.out.println(naughtyCourse);
+//        System.out.println(naughtyCourse);
 
 
 
