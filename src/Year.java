@@ -1,2 +1,3 @@
-package PACKAGE_NAME;public enum Year {
+public enum Year {
+    FIRST, SECOND, THIRD, FOURTH
 }
